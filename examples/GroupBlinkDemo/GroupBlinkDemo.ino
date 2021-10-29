@@ -11,6 +11,9 @@ void setup()
 	led.begin(); //Initalize LED controller 
 	led.setOutputArray(Off); //Turn all off by default
 	led.setGroupBrightness(50); //Set to 50% brightness
+
+	led.setGroupBlinkPeriod(Period); //Set blink period to specified number of ms
+	led.setGroupOnTime(OnTime); //Set on time for each blinking period 
 }
 
 void loop()
