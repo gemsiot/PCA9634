@@ -1,0 +1,35 @@
+#######################################
+# Syntax Coloring Map Logger
+#######################################
+
+#######################################
+# Datatypes (KEYWORD1)
+#######################################
+
+PCA9634 KEYWORD1	PCA9634
+
+#######################################
+# Methods and Functions (KEYWORD2)
+#######################################
+
+begin		KEYWORD2
+sleep			KEYWORD2
+setGroupMode 		KEYWORD2
+setGroupBlinkFreq		KEYWORD2
+setGroupBlinkPeriod			KEYWORD2
+setGroupOnTime			KEYWORD2
+setGroupBrightness 		KEYWORD2
+setBrightness 		KEYWORD2
+setOutput 		KEYWORD2
+setOutputArray 	KEYWORD2
+digitalWrite	KEYWORD2
+analogWrite		KEYWORD2
+
+#######################################
+# Constants (LITERAL1)
+#######################################
+
+Off	LITERAL1
+On	LITERAL1
+PWM LITERAL1
+Group LITERAL1
