@@ -42,6 +42,11 @@ enum GroupMode{
 	Blink = 1,
 };
 
+enum OutputMode{
+	OpenDrain = 0,
+	TotemPole = 1,
+};
+
 enum PortState{
 	Off = 0,
 	On = 1,
@@ -56,6 +61,7 @@ class PCA9634
     PCA9634(int _ADR); 
     int begin(void);
     int sleep(bool State);
+    int setOutputMode(OutputMode State);
     int setGroupMode(GroupMode State);
     int setGroupBlinkFreq(float Freq);
     int setGroupBlinkPeriod(uint16_t Period);

@@ -43,6 +43,14 @@ int PCA9634::sleep(bool State)
 	return writeByte(MODE1, Val); //Write adjusted value back to register   
 }
 
+int PCA9634::setOutputMode(OutputMode State)
+{
+	uint8_t Val = readByte(MODE2); //Read in current value of MODE2 register
+	if(State == OpenDrain) Val = clearBit(Val, 2); //Clear OUTDRV bit for open drain output
+	if(State == TotemPole) Val = setBit(Val, 2); //Set OUTDRV bit for totem pole output
+	return writeByte(MODE2, Val); //Write adjusted value back
+}
+
 int PCA9634::setGroupMode(GroupMode State)
 {
 	uint8_t Val = readByte(MODE2); //Read in current state of MODE2 reg
