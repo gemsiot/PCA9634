@@ -1,6 +1,6 @@
 #include <PCA9634.h>
 
-PCA9634 led(0x29); //Instatiate LED driver with 0x29 address
+PCA9634 led(0x50); //Instatiate LED driver with 0x50 address
 
 const uint16_t Period = 1500; //1.5 second blink period
 const uint16_t OnTime = 400; //400ms on time
