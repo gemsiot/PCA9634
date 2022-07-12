@@ -15,7 +15,7 @@ Allows control of individual LEDs on the driver as well as the dimming and blink
 Distributed as-is; no warranty is given.
 ******************************************************************************/
 
-#include <PCA9634.h>
+#include "PCA9634.h"
 
 PCA9634::PCA9634(int _ADR)
 {
@@ -152,6 +152,16 @@ int PCA9634::setBrightness(uint8_t Pos, float Brightness) //Set brightness [%] f
 	}
 	uint8_t RegVal = int(Brightness*256.0); //Calculate duty cycle to nearest int
 	return writeByte(PWM0 + Pos, RegVal); //Write value to specified port PWM register
+}
+
+int PCA9634::setBrightnessArray(float Brightness) //Set all ports to same brightness value
+{
+	//FIX! Find more elegant solution?
+	int Error = 0;
+	for(int i = 0; i < 8; i++) { //Interate over all ports and set value
+		if(setBrightness(i, Brightness) != 0) Error = -1; //FIX! Use different error value? 
+	}
+	return Error; //Return cumulative error state
 }
 
 int PCA9634::setOutput(uint8_t Pos, PortState State) //Set state (Off, On, PWM, Group) of a given port

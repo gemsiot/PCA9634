@@ -70,6 +70,7 @@ class PCA9634
 
     int setGroupBrightness(float Brightness);
     int setBrightness(uint8_t Pos, float Brightness);
+    int setBrightnessArray(float Brightness);
 
     int setOutput(uint8_t Pos, PortState State);
     int setOutputArray(PortState Val);
