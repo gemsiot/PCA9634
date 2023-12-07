@@ -13,6 +13,8 @@ Allows control of individual LEDs on the driver as well as the dimming and blink
 -Nikola Tesla
 
 Distributed as-is; no warranty is given.
+
+© 2023 Regents of the University of Minnesota. All rights reserved.
 ******************************************************************************/
 
 #ifndef PCA9634_h
